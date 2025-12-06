@@ -1,0 +1,347 @@
+:root {
+    /* Color Palette (UPDATED FOR DARK THEME) */
+    --primary-color: #00aaff; /* A brighter blue for dark mode/links */
+    --secondary-color: #6c757d; /* Accent color */
+    --background-color: #121212; /* Dark background color (matches particles) */
+    --card-background: #1e1e1e; /* Slightly lighter dark card */
+    --text-color: #f0f0f0; /* Light text for contrast */
+    
+    /* Font Stack */
+    --font-family-sans: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Spacing */
+    --section-padding: 80px 40px;
+    --card-spacing: 20px;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    color: var(--text-color); /* Uses dark theme color */
+    background-color: var(--background-color); /* Uses dark theme color */
+    /* Essential for smooth navigation scrolling */
+    scroll-behavior: smooth;
+}
+
+/* Resume button  */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- General Section Styling --- */
+.section {
+    padding: var(--section-padding);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section:nth-child(even) {
+    /* Subtle difference for alternating sections in dark mode */
+    background-color: #1a1a1a; 
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-align: center;
+    border-bottom: 3px solid var(--primary-color);
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    /* Slightly darker primary color */
+    background-color: #0056b3; 
+    color:white;
+    transform: translateY(-2px);
+}
+
+/* --- Navigation Styling --- */
+#main-nav {
+    /* Keeps the nav at the top */
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* --- Hero Section --- */
+#hero {
+    /* Takes up full viewport height */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-color);
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 25%;
+    margin-bottom: 20px;
+    border: 5px solid var(--primary-color);
+    animation: pulse-glow 3s infinite alternate ease-in-out;
+    box-shadow: 
+        0 0 10px 5px rgba(0,170,255,0.8),
+        0 0 80px 30px var(--background-color),
+        0 0 15px 1px var(--primary-color) inset;
+    border: 3px solid var(--primary-color);
+}
+
+#hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.tagline {
+    font-size: 1.4em;
+    color: var(--secondary-color);
+}
+
+/* --- About & Skills --- */
+.skills-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.skill-category {
+    flex: 1;
+    background-color:var(--card-background);
+    border-left: 5px solid var(--primary-color);
+    padding: var(--card-spacing);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- Experience & Projects Card Layouts --- */
+.experience-card,
+.project-card {
+    background-color: var(--card-background);
+    border-left: 5px solid var(--primary-color);
+    padding: var(--card-spacing);
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.experience-card h3,
+.project-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.company {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+#experience ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+#experience ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--card-spacing);
+}
+
+/* --- Contact Form --- */
+#contact {
+    text-align: center;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-family-sans);
+    /* Ensure input text is readable in dark mode */
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border: 1px solid #333; 
+}
+
+#contact-form button {
+    width: 100%;
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    margin: 0 15px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--text-color);
+    color: white;
+    font-size: 0.9em;
+}
+
+/* ================================================================ */
+/* CRITICAL: PARTICLE LAYERING (GLOBAL) */
+/* ================================================================ */
+
+#tsparticles {
+    position: fixed; /* Use fixed so it doesn't scroll away */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Pushes it behind all other content */
+}
+
+#content-wrapper {
+    position: relative;
+    z-index: 1; /* Ensures content is above particles */
+}
+
+/* ================================================================ */
+/* UI TRANSITION SETUP (Targeted by JavaScript) */
+/* ================================================================ */
+
+/* 1. Define the smooth transition property */
+.reveal-on-scroll,
+.fade-in-element {
+    /* Transition opacity and transform over 0.8 seconds for smoothness */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 2. Define the starting (hidden) state */
+.is-hidden {
+    /* Completely invisible */
+    opacity: 0;
+    /* Starts slightly below its final position (creates a 'slide-up' effect) */
+    transform: translateY(50px);
+}
+
+/* ================================================================ */
+/* NEW: GLOW ANIMATION KEYFRAMES */
+/* ================================================================ */
+@keyframes pulse-glow {
+    0% {
+        /* Starting state (current glow setting) */
+        box-shadow: 
+            0 0 10px 5px rgba(0, 170, 255, 0.8), /* Sharp Halo */
+            0 0 80px 30px var(--background-color), /* Soft Fade-out */
+            0 0 15px 1px var(--primary-color) inset;
+    }
+    50% {
+        /* Mid-point state (subtly expand the glow) */
+        box-shadow: 
+            0 0 14px 10px rgba(0, 170, 255, 0.9), /* Halo gets slightly brighter/bigger */
+            0 0 95px 35px var(--background-color), /* Fade-out expands */
+            0 0 16px 2px var(--primary-color) inset;
+    }
+    100% {
+        /* Return to the starting state */
+        box-shadow: 
+            0 0 10px 5px rgba(0, 170, 255, 0.8),
+            0 0 80px 30px var(--background-color),
+            0 0 15px 1px var(--primary-color) inset;
+    }
+}
+
+/* 3. Media Queries for smaller screens */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 40px 20px;
+    }
+
+    #main-nav {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .nav-links a {
+        margin: 5px 10px;
+        display: inline-block;
+    }
+    
+    .skills-grid {
+        flex-direction: column;
+    }
+    
+    #hero h1 {
+        font-size: 2.5em;
+    }
+}
