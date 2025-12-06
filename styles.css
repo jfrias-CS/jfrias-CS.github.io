@@ -5,117 +5,60 @@
     --background-color: #121212; /* Dark background color (matches particles) */
     --card-background: #1e1e1e; /* Slightly lighter dark card */
     --text-color: #f0f0f0; /* Light text for contrast */
-    
+
     /* Font Stack */
-    --font-family-sans: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    
+    --font-family-sans: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
     /* Spacing */
     --section-padding: 80px 40px;
     --card-spacing: 20px;
 }
 
-/* Basic Reset */
+/* Basic Styling and Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: var(--font-family-sans);
-    line-height: 1.6;
-    color: var(--text-color); /* Uses dark theme color */
-    background-color: var(--background-color); /* Uses dark theme color */
-    /* Essential for smooth navigation scrolling */
-    scroll-behavior: smooth;
-}
-
-/* Resume button  */
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--secondary-color);
-}
-
-/* --- General Section Styling --- */
 .section {
     padding: var(--section-padding);
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.section:nth-child(even) {
-    /* Subtle difference for alternating sections in dark mode */
-    background-color: #1a1a1a; 
+/* Navigation circles */
+#fp-nav {
+    /* Position slightly away from the right edge */
+    right: 20px !important;
+    /* Ensures it's always above content but below a modal/pop-up */
+    z-index: 990;
 }
 
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    text-align: center;
-    border-bottom: 3px solid var(--primary-color);
-    display: block;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 5px;
+/* Style the links (the dots themselves) */
+#fp-nav ul li a span {
+    background: var(--secondary-color) !important; /* Inactive dot color */
+    border: 1px solid var(--secondary-color) !important;
+    transition: all 0.3s ease;
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-    border: none;
+/* Style the active dot */
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span {
+    background: var(--primary-color) !important; /* Active dot color */
+    border: 1px solid var(--primary-color) !important;
+    /* Adding a subtle glow to the active dot */
+    box-shadow: 0 0 5px var(--primary-color);
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-primary:hover {
-    /* Slightly darker primary color */
-    background-color: #0056b3; 
-    color:white;
-    transform: translateY(-2px);
-}
-
-/* --- Navigation Styling --- */
-#main-nav {
-    /* Keeps the nav at the top */
-    position: sticky; 
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background-color: var(--card-background);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.nav-brand {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.nav-links a {
-    margin-left: 20px;
-    color: var(--text-color);
+/* Style the tooltips (text labels) */
+.fp-tooltip {
+    color: var(--text-color) !important;
+    font-size: 14px;
     font-weight: 500;
+    opacity: 0.8;
 }
 
-/* --- Hero Section --- */
 #hero {
     /* Takes up full viewport height */
     min-height: 100vh;
@@ -127,16 +70,15 @@ h2 {
 }
 
 .profile-pic {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
     object-position: 50% 25%;
     margin-bottom: 20px;
     border: 5px solid var(--primary-color);
     animation: pulse-glow 3s infinite alternate ease-in-out;
-    box-shadow: 
-        0 0 10px 5px rgba(0,170,255,0.8),
+    box-shadow: 0 0 10px 5px rgba(0, 170, 255, 0.8),
         0 0 80px 30px var(--background-color),
         0 0 15px 1px var(--primary-color) inset;
     border: 3px solid var(--primary-color);
@@ -153,7 +95,75 @@ h2 {
     color: var(--secondary-color);
 }
 
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-align: center;
+    /* border-bottom: 3px solid var(--primary-color); */
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 60%;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+    border-radius: 2px;
+}
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease, transform 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+/* Resume button  */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    /* Slightly darker primary color */
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
 /* --- About & Skills --- */
+.bio-summary {
+    max-width: 700px;
+    margin-bottom: 30px;
+    text-align: left;
+}
 .skills-grid {
     display: flex;
     justify-content: space-around;
@@ -164,13 +174,60 @@ h2 {
 
 .skill-category {
     flex: 1;
-    background-color:var(--card-background);
+    background-color: var(--card-background);
     border-left: 5px solid var(--primary-color);
     padding: var(--card-spacing);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    text-align: left;
 }
 
+.reveal-on-scroll,
+.fade-in-element {
+    transition: opacity 0.8s ease-out,
+        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.is-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Apply transitions globally to allow the hover state to be smooth */
+.skill-category,
+.experience-card,
+.project-card {
+    /* Existing box-shadow and border-left should be kept */
+
+    /* Add smooth transition for transform and box-shadow */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out,
+        border-color 0.3s ease-out;
+    text-align: left;
+}
+
+/* New Hover Effect */
+.skill-category:hover,
+.experience-card:hover,
+.project-card:hover {
+    /* 1. Subtle Lift */
+    transform: translateY(-5px);
+
+    /* 2. Primary Color Glow (makes the card pop) */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 170, 255, 0.6); /* Glow using primary color */
+
+    /* 3. Highlight the border */
+    border-color: #00aaff;
+}
+
+.skills-grid .skill-category:nth-child(1).is-hidden {
+    transform: translateX(-50px);
+}
+
+.skills-grid .skill-category:nth-child(3).is-hidden {
+    transform: translateX(50px);
+}
 /* --- Experience & Projects Card Layouts --- */
 .experience-card,
 .project-card {
@@ -179,9 +236,77 @@ h2 {
     padding: var(--card-spacing);
     margin-bottom: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
+.horizantal-slider {
+    max-width: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.project-card {
+    text-align: left;
+    margin: 0;
+}
+
+#projects .section-content {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 50px;
+}
+
+#projects .fp-slidesContainer {
+    flex-grow: 1;
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Targeting the control arrows for horizontal navigation */
+.fp-controlArrow {
+    /* The arrows are styled using borders, not color or background */
+    border-color: transparent var(--text-color) transparent transparent !important;
+
+    /* Ensure the size remains consistent */
+    border-width: 10px 5px 10px 5px; /* Example dimensions */
+
+    /* Make sure the arrows are visible above other content */
+    z-index: 4;
+
+    /* Optional: Increase opacity for better visibility in your dark theme */
+    opacity: 0.9 !important;
+
+    transition: opacity 0.3s ease;
+}
+
+/* Specific styling for the Left Arrow */
+.fp-controlArrow.fp-prev {
+    /* The left arrow points left, so the color goes on the left border */
+    border-color: transparent var(--primary-color) transparent transparent !important;
+}
+
+/* Specific styling for the Right Arrow */
+.fp-controlArrow.fp-next {
+    /* The right arrow points right, so the color goes on the right border */
+    border-color: transparent transparent transparent var(--primary-color) !important;
+}
+
+/* Optional: Change color on hover for visual feedback */
+.fp-controlArrow:hover {
+    /* Use your primary color for a hover effect */
+    opacity: 1 !important;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    /* text-align: center; */
+}
 .experience-card h3,
 .project-card h3 {
     margin-top: 0;
@@ -204,14 +329,14 @@ h2 {
     content: "•";
     color: var(--primary-color);
     font-weight: bold;
-    display: inline-block; 
+    display: inline-block;
     width: 1em;
     margin-left: -1em;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr));
     gap: var(--card-spacing);
 }
 
@@ -231,11 +356,32 @@ h2 {
     /* Ensure input text is readable in dark mode */
     background-color: var(--card-background);
     color: var(--text-color);
-    border: 1px solid #333; 
+    border: 1px solid #333;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
 }
 
 #contact-form button {
     width: 100%;
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+}
+
+.btn-secondary:hover {
+    /* Slightly darker primary color */
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
 }
 
 .social-links {
@@ -244,8 +390,15 @@ h2 {
 
 .social-links a {
     margin: 0 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
     font-size: 1.1em;
     font-weight: 500;
+}
+
+.social-links a:hover {
+    color: var(--text-color);
+    background-color: var(--primary-color);
 }
 
 /* --- Footer --- */
@@ -253,95 +406,49 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: var(--text-color);
-    color: white;
+    color: var(--background-color);
     font-size: 0.9em;
 }
 
-/* ================================================================ */
-/* CRITICAL: PARTICLE LAYERING (GLOBAL) */
-/* ================================================================ */
+/* GLOW ANIMATION KEYFRAMES */
 
-#tsparticles {
-    position: fixed; /* Use fixed so it doesn't scroll away */
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Pushes it behind all other content */
-}
-
-#content-wrapper {
-    position: relative;
-    z-index: 1; /* Ensures content is above particles */
-}
-
-/* ================================================================ */
-/* UI TRANSITION SETUP (Targeted by JavaScript) */
-/* ================================================================ */
-
-/* 1. Define the smooth transition property */
-.reveal-on-scroll,
-.fade-in-element {
-    /* Transition opacity and transform over 0.8 seconds for smoothness */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* 2. Define the starting (hidden) state */
-.is-hidden {
-    /* Completely invisible */
-    opacity: 0;
-    /* Starts slightly below its final position (creates a 'slide-up' effect) */
-    transform: translateY(50px);
-}
-
-/* ================================================================ */
-/* NEW: GLOW ANIMATION KEYFRAMES */
-/* ================================================================ */
 @keyframes pulse-glow {
     0% {
         /* Starting state (current glow setting) */
-        box-shadow: 
-            0 0 10px 5px rgba(0, 170, 255, 0.8), /* Sharp Halo */
-            0 0 80px 30px var(--background-color), /* Soft Fade-out */
-            0 0 15px 1px var(--primary-color) inset;
+        box-shadow: 0 0 10px 5px rgba(0, 170, 255, 0.8),
+            /* Sharp Halo */ 0 0 80px 30px var(--background-color),
+            /* Soft Fade-out */ 0 0 15px 1px var(--primary-color) inset;
     }
     50% {
         /* Mid-point state (subtly expand the glow) */
-        box-shadow: 
-            0 0 14px 10px rgba(0, 170, 255, 0.9), /* Halo gets slightly brighter/bigger */
-            0 0 95px 35px var(--background-color), /* Fade-out expands */
-            0 0 16px 2px var(--primary-color) inset;
+        box-shadow: 0 0 14px 10px rgba(0, 170, 255, 0.9),
+            /* Halo gets slightly brighter/bigger */ 0 0 95px 35px
+                var(--background-color),
+            /* Fade-out expands */ 0 0 16px 2px var(--primary-color) inset;
     }
     100% {
         /* Return to the starting state */
-        box-shadow: 
-            0 0 10px 5px rgba(0, 170, 255, 0.8),
+        box-shadow: 0 0 10px 5px rgba(0, 170, 255, 0.8),
             0 0 80px 30px var(--background-color),
             0 0 15px 1px var(--primary-color) inset;
     }
 }
 
-/* 3. Media Queries for smaller screens */
-@media (max-width: 768px) {
-    :root {
-        --section-padding: 40px 20px;
-    }
+body {
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    color: var(--text-color); /* Uses dark theme color */
+    background-color: var(--background-color); /* Uses dark theme color */
+}
 
-    #main-nav {
-        flex-direction: column;
-        padding: 15px 20px;
-    }
-
-    .nav-links a {
-        margin: 5px 10px;
-        display: inline-block;
-    }
-    
-    .skills-grid {
-        flex-direction: column;
-    }
-    
-    #hero h1 {
-        font-size: 2.5em;
-    }
+.section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center */
+    align-items: center; /* Horizontally center */
+    height: 100vh; /* Take full viewport height */
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
 }
