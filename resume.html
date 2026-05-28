@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Jonathan Frias — Résumé</title>
+    <style>
+        /* Print-optimized résumé. Targets US Letter; ATS-friendly fonts. */
+        @page {
+            size: letter;
+            margin: 0.5in 0.55in;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.35;
+            color: #1a1a1a;
+            background: #fff;
+        }
+        a { color: #0066cc; text-decoration: none; }
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 2pt;
+        }
+        h2 {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #000;
+            border-bottom: 1.2pt solid #000;
+            margin-top: 10pt;
+            margin-bottom: 5pt;
+            padding-bottom: 1.5pt;
+        }
+        h3 {
+            font-size: 10.5pt;
+            font-weight: 700;
+            margin-top: 6pt;
+        }
+        h4 {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #333;
+        }
+        .contact {
+            color: #444;
+            margin-bottom: 8pt;
+            font-size: 9.5pt;
+        }
+        .contact a { color: #0066cc; }
+        .role-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 4pt;
+        }
+        .role-line .right {
+            color: #444;
+            font-size: 9.5pt;
+            font-weight: 500;
+        }
+        .meta {
+            color: #555;
+            font-size: 9.5pt;
+            font-style: italic;
+            margin-bottom: 3pt;
+        }
+        ul {
+            margin-left: 14pt;
+            margin-top: 2pt;
+            margin-bottom: 4pt;
+        }
+        li {
+            margin-bottom: 2.5pt;
+            line-height: 1.35;
+        }
+        .tech {
+            font-size: 9.5pt;
+            color: #444;
+            margin-top: 2pt;
+        }
+        .skill-row {
+            margin: 2pt 0;
+            font-size: 10pt;
+        }
+        .skill-label {
+            font-weight: 700;
+            color: #000;
+            display: inline-block;
+            min-width: 110pt;
+        }
+        .summary {
+            margin-bottom: 4pt;
+            color: #222;
+        }
+        section { page-break-inside: avoid; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jonathan Frias</h1>
+        <p class="contact">
+            Fremont, CA · (707) 779-2019 ·
+            <a href="mailto:jonathanfrias.1797@gmail.com">jonathanfrias.1797@gmail.com</a> ·
+            <a href="https://linkedin.com/in/jonathan-frias-59452a162">linkedin.com/in/jonathan-frias-59452a162</a> ·
+            <a href="https://github.com/jfrias-CS">github.com/jfrias-CS</a> ·
+            <a href="https://jfrias-cs.github.io">jfrias-cs.github.io</a>
+        </p>
+    </header>
+
+    <section>
+        <h2>Education</h2>
+        <div class="role-line">
+            <h3>California State University, East Bay — B.S. Computer Science</h3>
+            <span class="right">Graduated May 2026</span>
+        </div>
+        <p class="meta">Cumulative GPA: 3.4 · CSU East Bay GPA: 3.98 / 4.0 (transferred in at 3.229; raised across 4 semesters)</p>
+        <p style="font-size: 9.5pt; color: #444;">
+            <strong>Coursework:</strong> Software Engineering, Artificial Intelligence, Web Development, Data Structures, Algorithms, Statistics, Linear Algebra, Computer Architecture, Programming Concepts, Software Responsibility, Computer Networks.
+        </p>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <p class="skill-row"><span class="skill-label">Languages:</span> TypeScript, JavaScript, Python, Java, Kotlin, C / C++, Rust, Assembly</p>
+        <p class="skill-row"><span class="skill-label">Frontend:</span> React, Next.js, Tailwind, Vite, HTML / CSS</p>
+        <p class="skill-row"><span class="skill-label">Backend / Web:</span> FastAPI, Actix-web (Rust), REST APIs, socket programming</p>
+        <p class="skill-row"><span class="skill-label">Mobile:</span> Android (Kotlin + Jetpack Compose)</p>
+        <p class="skill-row"><span class="skill-label">AI / ML:</span> OpenAI Fine-tuning, TensorFlow Lite, Claude API + prompt caching, NLG evaluation (BLEURT / COMET / BERTScore / SBert / USE / METEOR), computer vision pipelines</p>
+        <p class="skill-row"><span class="skill-label">Infra / Tools:</span> Linux, Docker, Tailscale, Git, SciCat, LabView APIs</p>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+
+        <div class="role-line">
+            <h3>Automation &amp; Software Development Engineer Intern — Lawrence Berkeley National Laboratory</h3>
+            <span class="right">Jun 2025 – Aug 2025 · Berkeley, CA</span>
+        </div>
+        <p class="meta">Advanced Light Source · ASPIRES program</p>
+        <ul>
+            <li>Built a React + TypeScript interface (forked from <code>als-computing/sample_metadata_app-frontend</code>) enabling ALS beamline scientists to configure X-ray spectroscopy samples; <strong>authored multi-row selection (shift+click, click-drag, shift+arrow), bulk duplicate/delete, and an Undo system that reverts an entire selection in one action</strong>.</li>
+            <li>Wrote <strong>~1,000 lines of Python automation</strong> (<code>ScanFileGenerator</code>) that authenticates to SciCat via <code>pyscicat</code>, pulls bars and samples for a proposal, and generates LabView-format scan files for <strong>XAS / XLD / XMCD across 4 beamlines (402, 631, 4.0.2, 6.3.1)</strong> with element-specific edge energies for <strong>11 elements</strong>, organizing output by proposal → bar → sample directories.</li>
+            <li>Replaced <strong>hours of per-file manual editing</strong> (a typical proposal requires ~25–300 hand-written scan files — 5–20 samples × 5–15 scan types — at ~1–2 min each) with a <strong>sub-minute batch run</strong>, eliminating per-file format errors during high-stakes beamline operations.</li>
+            <li>Selected for the <strong>ASPIRES</strong> (Advancing STEM Pioneers in Research in Energy Sciences) program; delivered a 1-minute lightning pitch and open poster session.</li>
+            <li class="tech"><strong>Tech:</strong> React 18, TypeScript, Vite, Python, pyscicat, LabView API, Docker, Bulma · Public repos: <a href="https://github.com/jfrias-CS/ScanFileGenerator">ScanFileGenerator</a>, <a href="https://github.com/jfrias-CS/sample_metadata_app-frontend">sample_metadata_app-frontend</a></li>
+        </ul>
+
+        <div class="role-line">
+            <h3>Undergraduate Research Assistant — CAHSI / Walkaware (PI: Prof. Lynne Grewe)</h3>
+            <span class="right">Jan 2025 – Oct 2025 · CSU East Bay</span>
+        </div>
+        <ul>
+            <li>Built <strong>SafeStep</strong>, an Android accessibility app (~970 LOC Kotlin) running a 3-stage ML pipeline per captured frame: <strong>on-device TFLite object detection</strong> locates sidewalk hazards and produces bounding boxes, <strong>on-device TFLite severity regression</strong> classifies each into Low / Moderate / High / Critical, and a <strong>fine-tuned LLM</strong> generates a natural-language guidance narrative spoken aloud via Android TextToSpeech for visually impaired users.</li>
+            <li><strong>Trained both TFLite models from scratch</strong> — hazard detector (224×224, 6-float-per-box output) and severity regressor — deployed fully on-device for offline operation and sub-second latency.</li>
+            <li>Curated a <strong>~2,800-row training dataset</strong> (~933 photos × 3 narrative variants as data augmentation) and <strong>iterated through fine-tunes of GPT-3.5-turbo-0125 and GPT-4o Mini</strong> for the narrative head (epoch = 2, temperature = 0.3).</li>
+            <li>Built a <strong>six-metric NLG evaluation harness</strong> (BLEURT, COMET, BERTScore, Sentence-BERT, USE similarity, METEOR); achieved <strong>median BLEURT 0.65 / BERTScore F1 0.60 / COMET 0.75 / SBERT cosine 0.80</strong> (strong semantic alignment), and <strong>diagnosed three main error classes — severity mismatches (~25%), directional conflicts (~20%), over-optimism (~15%)</strong> — driving concrete next-iteration priorities (bounding-box-aware prompting, severity-keyword mapping, augmentation of rare cases).</li>
+            <li>Selected for <strong>ASPIRES Summer 2025</strong> (1-minute lightning pitch + open poster session).</li>
+            <li class="tech"><strong>Tech:</strong> Kotlin, Jetpack Compose, TensorFlow Lite 2.13, OpenAI Fine-tuning API, Python / Colab, Android TextToSpeech · Repo: <a href="https://github.com/jfrias-CS/SafeStep2">SafeStep2</a></li>
+        </ul>
+
+        <div class="role-line">
+            <h3>Field Service Engineer — Murray Window &amp; Door</h3>
+            <span class="right">Aug 2024 – May 2025 · Campbell, CA</span>
+        </div>
+        <ul>
+            <li>Developed a preventive maintenance schedule that contributed to a <strong>15% reduction in product failures</strong>.</li>
+            <li>Documented equipment performance metrics in logs and databases to support analysis and reporting.</li>
+            <li>Participated in equipment installation, trial runs, investigative tests, repairs, and overhauls.</li>
+            <li>Collaborated cross-functionally to resolve technical challenges in service processes.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+
+        <div class="role-line">
+            <h3>FIRST DAY — AI Codebase Onboarding Tutor</h3>
+            <span class="right">In progress · ship Jun 2026</span>
+        </div>
+        <ul>
+            <li>AI agent that ingests any public GitHub repo at a pinned commit and turns it into an interactive tutor: <strong>chat-over-code with citations</strong>, <strong>auto-generated Mermaid architecture diagrams</strong>, and <strong>AI-graded comprehension assessments</strong> that gate progress.</li>
+            <li class="tech"><strong>Stack:</strong> Next.js 14, TypeScript, Tailwind, shadcn/ui, FastAPI (Python), Claude API (Sonnet 4.6 + Opus 4.7) with prompt caching, tree-sitter, SQLite + sqlite-vec, Mermaid, Vercel + Fly.io.</li>
+        </ul>
+
+        <div class="role-line">
+            <h3>MotoCrashApp — Hackathon Emergency Response System</h3>
+            <span class="right">MESA-U 2024 · Best Research Award (1 of ~100)</span>
+        </div>
+        <ul>
+            <li>Built a Python (Tkinter) desktop app that monitors for a configurable post-incident countdown; if the rider doesn't dismiss it, the system automatically calls the <strong>Google Geolocation API</strong> for GPS coordinates and <strong>dispatches a WhatsApp message</strong> (via PyWhatKit) to the rider's emergency contact containing their name, allergies, and live latitude/longitude.</li>
+            <li class="tech"><strong>Stack:</strong> Python, Tkinter, threading (non-blocking countdown), requests, Google Geolocation API, PyWhatKit · ~180 LOC main module + 14 Python files, built in ~48 hours.</li>
+        </ul>
+
+        <div class="role-line">
+            <h3>Self-Hosted Home Security System — Home-lab / infrastructure project</h3>
+            <span class="right">Personal</span>
+        </div>
+        <ul>
+            <li>Deployed a self-hosted security camera + NVR system on a Linux home server using <strong>Frigate</strong> (open-source NVR with real-time object detection); integrated a network camera and exposed the system remotely via <strong>Tailscale</strong> mesh VPN for off-network access.</li>
+            <li class="tech"><strong>Stack:</strong> Linux, Docker (Frigate container), Frigate NVR, Tailscale VPN, MQTT. Demonstrates Linux sysadmin, containerization, networking / VPN, integration of open-source tooling.</li>
+        </ul>
+    </section>
+</body>
+</html>

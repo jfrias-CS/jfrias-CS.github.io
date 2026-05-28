@@ -1,41 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
-    new fullpage("#fullpage", {
-        autoScrolling: true,
-        scrollingSpeed: 700,
-        licenseKey: "gplv3-license",
+// Minimal JS — smooth-scroll fallback + nav highlight on scroll.
+(() => {
+    'use strict';
 
-        navigation: true,
-        navigationTooltips: [
-            "Home",
-            "About",
-            "Experience",
-            "Projects",
-            "Contact",
-        ],
-
-        // --- NEW HORIZONTAL CONFIGURATION ---
-        // Enables navigation dots/bullets for horizontal slides
-        slidesNavigation: true,
-        // Allows keyboard control for horizontal slides (using left/right arrows)
-        controlArrows: true,
-        // Sets the speed of the slide transition (in milliseconds)
-        slideSpeed: 1000,
+    // Smooth-scroll for hash links (modern browsers honor scroll-behavior: smooth in CSS,
+    // but this gives explicit behavior + closes the mobile menu on click).
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+            const target = document.querySelector(link.getAttribute('href'));
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
     });
-});
 
-const contactForm = document.getElementById("contact-form");
-if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+    // Highlight the active section in the nav as the user scrolls.
+    const navLinks = document.querySelectorAll('.nav nav a[href^="#"]');
+    const sections = [...navLinks]
+        .map((a) => document.querySelector(a.getAttribute('href')))
+        .filter(Boolean);
 
-        // Here you would typically serialize the form data and send it via fetch()
-
-        // Simple alert feedback
-        alert(
-            "Thank you for your message! (Note: This is a placeholder and no actual email was sent.)"
+    if ('IntersectionObserver' in window && sections.length) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach((a) => {
+                            a.style.color =
+                                a.getAttribute('href') === `#${entry.target.id}`
+                                    ? 'var(--accent)'
+                                    : '';
+                        });
+                    }
+                });
+            },
+            { rootMargin: '-40% 0px -55% 0px' }
         );
-
-        // Reset the form fields
-        this.reset();
-    });
-}
+        sections.forEach((s) => observer.observe(s));
+    }
+})();

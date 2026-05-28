@@ -1,340 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Jonathan Frias | Portfolio</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonathan Frias — Computer Science | Software Engineer</title>
+    <meta name="description" content="CS grad (CSU East Bay, May 2026) building AI-powered products. Recent work at Lawrence Berkeley National Lab and on accessibility-focused AI for visually impaired users. Open to full-time roles." />
 
-        <link rel="stylesheet" href="styles.css" />
+    <!-- Open Graph / Social previews -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Jonathan Frias — Software Engineer" />
+    <meta property="og:description" content="CS grad building AI-powered products. Recent work at Lawrence Berkeley National Lab + accessibility-focused AI. Open to full-time roles." />
+    <meta property="og:image" content="https://jfrias-cs.github.io/Professional_Profile_Pic.jpg" />
+    <meta property="og:url" content="https://jfrias-cs.github.io" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jonathan Frias — Software Engineer" />
+    <meta name="twitter:description" content="CS grad building AI-powered products. Open to full-time roles." />
+    <meta name="twitter:image" content="https://jfrias-cs.github.io/Professional_Profile_Pic.jpg" />
 
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.css"
-        />
+    <!-- Favicon (inline SVG, no extra request) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e1a'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='30' font-weight='700' fill='%2300d4ff' text-anchor='middle'%3EJF%3C/text%3E%3C/svg%3E" />
 
-        <script
-            type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.9/fullpage.min.js"
-        ></script>
-    </head>
-    <body>
-        <div id="fullpage">
-            <!-- <nav id="main-nav">
-        <a href="#hero" class="nav-brand">Jonathan Frias</a>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="nav">
+        <div class="container nav-inner">
+            <a href="#hero" class="nav-brand">JF</a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="Jonathan_Frias_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Résumé ↗</a>
+            </nav>
         </div>
-      </nav> -->
+    </header>
 
-            <div class="section" id="hero">
-                <div class="section-content">
-                    <img
-                        src="images/Professional_Profile_Pic.jpg"
-                        alt="Your Professional Picture"
-                        class="profile-pic"
-                    />
+    <main id="main">
+        <!-- HERO -->
+        <section id="hero" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="eyebrow">Hi, I'm</p>
                     <h1>Jonathan Frias</h1>
-                    <h2>Welcome to my portfolio!</h2>
-                    <p class="tagline">
-                        Computer Science Major | Software Engineer in Training
+                    <p class="tagline">Computer Science · Software Engineer · Building AI-powered products</p>
+                    <p class="hero-blurb">
+                        Recent CS graduate from CSU East Bay (May 2026). Shipped Python + React tooling at <strong>Lawrence Berkeley National Lab</strong>, an Android accessibility app combining on-device CV and a fine-tuned LLM for the <strong>Walkaware</strong> research project, and a hackathon-winning emergency-alert system. <strong>Open to full-time SWE / Applied AI roles.</strong>
                     </p>
-                    <a
-                        href="files/Jonathan_Frias_Resume.pdf"
-                        class="btn btn-primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >View Resume</a
-                    >
-                </div>
-            </div>
-
-            <div class="section" id="about">
-                <div class="section-content">
-                    <h2>🧑‍💻 About Me & Skills</h2>
-                    <p class="bio-summary">
-                        Highly motivated graduating Computer Science senior
-                        aspiring to a Full Stack Development role, with a strong
-                        foundation in building applications from concept through
-                        production deployment. I am passionate about creating
-                        efficient, user-centric solutions, combining the
-                        systematic enjoyment of process automation such as
-                        Python, with the visual satisfaction of responsive UI
-                        development of React. I aim to apply my technical skills
-                        to build meaningful projects, specifically within the
-                        medical field, to enhance operational efficiency and
-                        contribute to better patient outcomes.
-                    </p>
-
-                    <div class="skills-grid">
-                        <div class="skill-category fade-in-element">
-                            <h3>Programming Languages</h3>
-                            <ul>
-                                <li>Java</li>
-                                <li>Python</li>
-                                <li>C/C++</li>
-                                <li>Kotlin</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category fade-in-element">
-                            <h3>Web Development</h3>
-                            <ul>
-                                <li>HTML5 & CSS3</li>
-                                <li>JavaScript (ES6+)</li>
-                                <li>React</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category fade-in-element">
-                            <h3>Tools & Concepts</h3>
-                            <ul>
-                                <li>Git/GitHub</li>
-                                <li>Data Structures & Algorithms</li>
-                                <li>Android App development</li>
-                            </ul>
-                        </div>
+                    <div class="cta-row">
+                        <a href="Jonathan_Frias_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+                            View résumé
+                            <span class="arrow">↗</span>
+                        </a>
+                        <a href="https://github.com/jfrias-CS" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://www.linkedin.com/in/jonathan-frias-59452a162/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
                     </div>
                 </div>
+                <div class="hero-photo">
+                    <img src="Professional_Profile_Pic.jpg" alt="Portrait of Jonathan Frias" />
+                </div>
             </div>
+        </section>
 
-            <div class="section" id="experience">
-                <div class="section-content">
-                    <h2>💼 Work Experience</h2>
-                    <div class="experience-card reveal-on-scroll">
-                        <h3>Full Stack Intern</h3>
-                        <p class="company">
-                            Lawrence Berkeley National Lab | June 2025 - August
-                            2025
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title"><span class="section-num">01</span> About</h2>
+                <div class="about-grid">
+                    <div class="about-prose">
+                        <p>
+                            I build software at the intersection of <strong>backend systems</strong>, <strong>applied AI</strong>, and <strong>UX that respects the user</strong>. The work I'm proudest of so far is the kind where the constraint comes from the user, not the framework — accessibility tools for visually impaired pedestrians, scientific tooling that has to be fast and unambiguous during beamline operations, and an emergency-response prototype designed for users who can't reach their phone.
                         </p>
+                        <p>
+                            Transferred into CSU East Bay carrying a 3.229 cumulative GPA and graduated with a <strong>3.4 cumulative / 3.98 in-major GPA</strong> across 4 semesters of CS coursework. Currently shipping <strong>FIRST DAY</strong> — an AI agent that turns any GitHub repo into an interactive tutor with chat-over-code citations, auto-generated diagrams, and AI-graded assessments.
+                        </p>
+                    </div>
+                    <aside class="about-stats">
+                        <div class="stat">
+                            <div class="stat-num">2,800+</div>
+                            <div class="stat-label">training samples curated for the fine-tuned LLM in <a href="#projects">SafeStep</a></div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-num">6</div>
+                            <div class="stat-label">NLG metrics used to evaluate the SafeStep model (BLEURT, COMET, BERTScore, SBert, USE, METEOR)</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-num">~1,000</div>
+                            <div class="stat-label">LOC of Python automation shipped at LBNL across 4 beamlines × 3 scan types × 11 elements</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-num">1 / 100</div>
+                            <div class="stat-label">"Best Research" award at the MESA-U 2024 Hackathon</div>
+                        </div>
+                    </aside>
+                </div>
+
+                <h3 class="subsection-title">Tech I work in</h3>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h4>Languages</h4>
                         <ul>
-                            <li>
-                                Develop a web interface to streamline
-                                organization of bar samples and configurations
-                                for X-ray spectroscopy scans, reducing manual
-                                data entry errors and saving time during
-                                experiments.
-                            </li>
-                            <li>
-                                Integrate with SciCat’s backend servers to
-                                enable user authentication and dynamic retrieval
-                                of sample data, which is then parsed into
-                                structured scan files for LabView API
-                                integration.
-                            </li>
-                            <li>
-                                Automate scan file generation via Python,
-                                allowing users to pre-load experiment parameters
-                                and execute scans with a single click,
-                                eliminating the need for manual file creation
-                                during beamline operations.
-                            </li>
-                            <li>
-                                Enhance efficiency by enabling batch uploads of
-                                sample configurations, reducing experiment setup
-                                time and minimizing human error in high-stakes
-                                research environments.
-                            </li>
+                            <li>TypeScript</li>
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>Kotlin</li>
+                            <li>C / C++</li>
+                            <li>Rust</li>
+                            <li>Assembly</li>
                         </ul>
                     </div>
-
-                    <div class="experience-card reveal-on-scroll">
-                        <h3>Undergraduate Research Assistant</h3>
-                        <p class="company">CAHSI | January 2025 - May 2025</p>
+                    <div class="skill-group">
+                        <h4>Frontend</h4>
                         <ul>
-                            <li>
-                                Develop an Android app using computer vision to
-                                detect sidewalk damage and provide spoken
-                                directional guidance for visually impaired
-                                users.
-                            </li>
-
-                            <li>
-                                Conduct data curation preprocessing to ensure
-                                high-quality datasets for machine learning
-                                models.
-                            </li>
-
-                            <li>
-                                Leverage Colab, Python, and a retrained version
-                                of OpenAI’s GPT-4o Mini to process images,
-                                classify walkway hazards, and generate natural
-                                language alerts.
-                            </li>
-                            <li>
-                                Work on LLM-based narrative generation to
-                                enhance mobility through spoken instructions.
-                            </li>
+                            <li>React</li>
+                            <li>Next.js</li>
+                            <li>Tailwind</li>
+                            <li>Vite</li>
+                            <li>HTML / CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Backend / Web</h4>
+                        <ul>
+                            <li>FastAPI (Python)</li>
+                            <li>Actix-web (Rust)</li>
+                            <li>REST APIs</li>
+                            <li>Socket programming</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Applied AI / ML</h4>
+                        <ul>
+                            <li>Claude API (Sonnet, Opus) + prompt caching</li>
+                            <li>OpenAI Fine-tuning API</li>
+                            <li>TensorFlow Lite (on-device)</li>
+                            <li>NLG evaluation (BLEURT, COMET, BERTScore)</li>
+                            <li>Computer vision pipelines</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Mobile</h4>
+                        <ul>
+                            <li>Android (Kotlin + Jetpack Compose)</li>
+                            <li>TFLite on-device inference</li>
+                            <li>Android TextToSpeech</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Infra / Tools</h4>
+                        <ul>
+                            <li>Linux (self-hosted home server)</li>
+                            <li>Docker</li>
+                            <li>Tailscale (mesh VPN)</li>
+                            <li>Git / GitHub</li>
+                            <li>SciCat, LabView APIs</li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="section" id="projects">
-                <div class="section-content">
-                    <h2>💡 Personal Projects</h2>
-                    <div class="horizontal-slider">
-                        <div class="slide">
-                            <div class="project-card">
-                                <h3>Parkly</h3>
-                                <p>A Java Application</p>
-                                <p>
-                                    🅿️ Parkly: Comprehensive Garage Operations
-                                    System Parkly is a multi-threaded,
-                                    concurrent garage management system designed
-                                    for automated and secure parking facility
-                                    operations. It demonstrates robust
-                                    architectural design by handling complex,
-                                    real-time processes from entry to exit,
-                                    payment, and internal employee management.
-                                    Key Functionalities: Ticketing & Tracking:
-                                    Automated generation of unique ticket IDs,
-                                    complete ticket tracking, and space tracking
-                                    to manage occupancy in real-time. Access
-                                    Control: Manages entry to the garage via
-                                    ticket generation and exit gate operation
-                                    based on validated payment or authorized
-                                    user override. Financial & Security: Tracks
-                                    payment status per ticket and provides
-                                    secure employee login validation coupled
-                                    with employee time tracking. Architectural
-                                    Highlights: Parkly is built using key
-                                    object-oriented design patterns to ensure
-                                    stability and efficiency: Multiple Threaded
-                                    Server Sockets: Enables the system to handle
-                                    concurrent client requests (multiple
-                                    entry/exit gates, employee terminals)
-                                    simultaneously without blocking, ensuring
-                                    high performance and responsiveness.
-                                    Singleton Pattern: Used for critical,
-                                    centralized components (like the Ticket ID
-                                    Generator or the Space Inventory Manager) to
-                                    ensure a single, authoritative instance and
-                                    prevent concurrency issues like duplicated
-                                    IDs or incorrect space assignments. Facade
-                                    Design Pattern: Provides a simplified,
-                                    unified interface to complex operational
-                                    sub-systems (e.g., calling one method to
-                                    process an exit handles payment validation,
-                                    time tracking updates, and ticket
-                                    reconciliation internally). Overall, Parkly
-                                    showcases advanced skills in concurrency,
-                                    security implementation, and sophisticated
-                                    systems architecture.
-                                </p>
-                                <div
-                                    class="project-image-slider"
-                                    id="parkly-slider"
-                                >
-                                    <img src="" alt="Parkly Screenshot 1" />
-                                    <img src="" alt="Parkly Screenshot 2" />
-                                    <img src="" alt="Parkly Screenshot 3" />
-                                </div>
-                                <a
-                                    href="https://github.com/jfrias-CS/Parkly.git"
-                                    target="\_blank"
-                                    >View Code</a
-                                >
-                            </div>
-                        </div>
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title"><span class="section-num">02</span> Experience</h2>
 
-                        <div class="slide">
-                            <div class="project-card">
-                                <h3>SafeStep</h3>
-                                <p>Kotlin</p>
-                                <p>
-                                    🚶‍♀️ SafeStep: AI-Powered Sidewalk Damage
-                                    Detection and Navigation SafeStep is an
-                                    Android application that uses TensorFlow
-                                    Lite models to enhance pedestrian safety by
-                                    detecting sidewalk hazards in real-time. The
-                                    application captures an image of the user's
-                                    surroundings and employs detection and
-                                    regression models to identify and quantify
-                                    damages (e.g., cracks, uneven slabs). This
-                                    raw data, including bounding boxes and
-                                    calculated severity levels, is then sent via
-                                    a structured prompt to a fine-tuned GPT-3.5
-                                    Turbo model. The large language model (LLM)
-                                    processes this technical data to generate
-                                    natural language instructions. These
-                                    instructions provide the user with clear,
-                                    actionable advice on the precise location
-                                    and severity of the damage, along with the
-                                    next safest step or direction to take to
-                                    avoid the hazard. SafeStep effectively
-                                    translates complex machine learning outputs
-                                    into intuitive, real-world guidance.
-                                </p>
-                                <a
-                                    href="https://github.com/jfrias-CS/SafeStep2"
-                                    target="\_blank"
-                                    >View Code</a
-                                >
-                                <div
-                                    class="project-image-slider"
-                                    id="safestep-slider"
-                                >
-                                    <img src="" alt="Parkly Screenshot 1" />
-                                    <img src="" alt="Parkly Screenshot 2" />
-                                    <img src="" alt="Parkly Screenshot 3" />
-                                </div>
-                            </div>
-                        </div>
+                <article class="exp-card">
+                    <div class="exp-meta">
+                        <p class="exp-date">June – August 2025</p>
+                        <p class="exp-location">Berkeley, CA</p>
                     </div>
+                    <div class="exp-body">
+                        <h3>Automation &amp; Software Development Engineer Intern</h3>
+                        <p class="exp-company">Lawrence Berkeley National Laboratory <span class="exp-program">· Advanced Light Source · ASPIRES program</span></p>
+                        <ul>
+                            <li>Built a <strong>React + TypeScript interface</strong> (forked from <code>als-computing/sample_metadata_app-frontend</code>) enabling ALS beamline scientists to configure X-ray spectroscopy samples; authored <strong>multi-row selection (shift+click, click-drag, shift+arrow), bulk duplicate/delete, and an Undo system that reverts an entire selection in one action</strong>.</li>
+                            <li>Wrote <strong>~1,000 lines of Python automation</strong> (<code>ScanFileGenerator</code>) that authenticates to SciCat via <code>pyscicat</code>, pulls bars and samples for a proposal, and generates LabView-format scan files for <strong>XAS / XLD / XMCD across 4 beamlines (402, 631, 4.0.2, 6.3.1)</strong> with element-specific edge energies for <strong>11 elements</strong>.</li>
+                            <li>Replaced <strong>hours of per-file manual editing</strong> (~25–300 hand-written scan files per experiment at ~1–2 min each) with a sub-minute batch run, eliminating per-file format errors during high-stakes beamline operations.</li>
+                            <li>Selected for the <strong>ASPIRES Summer 2025</strong> (Advancing STEM Pioneers in Research in Energy Sciences) program; delivered a 1-minute lightning pitch + open poster session.</li>
+                        </ul>
+                        <p class="exp-tech"><strong>Stack:</strong> React 18, TypeScript, Vite, Python, pyscicat, LabView API, Docker, Bulma</p>
+                    </div>
+                </article>
+
+                <article class="exp-card">
+                    <div class="exp-meta">
+                        <p class="exp-date">January – October 2025</p>
+                        <p class="exp-location">CSU East Bay</p>
+                    </div>
+                    <div class="exp-body">
+                        <h3>Undergraduate Research Assistant — CAHSI / Walkaware</h3>
+                        <p class="exp-company">PI: Prof. Lynne Grewe <span class="exp-program">· CAHSI REU program</span></p>
+                        <ul>
+                            <li>Built <strong>SafeStep</strong>, an Android accessibility app (~970 LOC Kotlin) running a 3-stage ML pipeline per frame: on-device TFLite object detection → on-device TFLite severity regression (Low / Moderate / High / Critical) → fine-tuned LLM narrative generation → Android TextToSpeech.</li>
+                            <li><strong>Trained both TFLite models from scratch</strong> for hazard detection and severity scoring; deployed fully on-device for offline operation and sub-second latency.</li>
+                            <li>Curated a <strong>~2,800-row training dataset</strong> (~933 photos × 3 narrative variants as data augmentation) and <strong>iterated through fine-tunes of GPT-3.5-turbo and GPT-4o Mini</strong> for the narrative head.</li>
+                            <li>Built a six-metric NLG evaluation harness — BLEURT, COMET, BERTScore, Sentence-BERT, USE similarity, METEOR — achieving <strong>median BLEURT 0.65 / BERTScore F1 0.60 / COMET 0.75 / SBERT cosine 0.80</strong>, and diagnosed three error classes (~25% severity mismatches, ~20% directional, ~15% over-optimism) driving next-iteration priorities.</li>
+                        </ul>
+                        <p class="exp-tech"><strong>Stack:</strong> Kotlin, Jetpack Compose, TensorFlow Lite 2.13, OpenAI Fine-tuning API, Python / Colab, Android TextToSpeech</p>
+                    </div>
+                </article>
+
+                <article class="exp-card">
+                    <div class="exp-meta">
+                        <p class="exp-date">August 2024 – May 2025</p>
+                        <p class="exp-location">Campbell, CA</p>
+                    </div>
+                    <div class="exp-body">
+                        <h3>Field Service Engineer</h3>
+                        <p class="exp-company">Murray Window &amp; Door</p>
+                        <ul>
+                            <li>Developed a preventive maintenance schedule that contributed to a <strong>15% reduction in product failures</strong>.</li>
+                            <li>Documented equipment performance metrics in logs and databases to support analysis and reporting.</li>
+                            <li>Participated in equipment installation, trial runs, investigative tests, repairs, and overhauls.</li>
+                            <li>Collaborated cross-functionally to resolve technical challenges in service processes.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title"><span class="section-num">03</span> Projects</h2>
+                <div class="projects-grid">
+
+                    <article class="project-card project-featured">
+                        <div class="project-header">
+                            <h3>FIRST DAY</h3>
+                            <span class="project-badge badge-progress">In progress · ship Jun 2026</span>
+                        </div>
+                        <p class="project-tagline">AI codebase onboarding tutor</p>
+                        <p>An AI agent that ingests any public GitHub repo at a pinned SHA and produces an interactive tutor: <strong>chat-over-code with citations</strong>, <strong>auto-generated Mermaid architecture diagrams</strong>, and <strong>AI-graded comprehension assessments</strong> that gate progress.</p>
+                        <ul class="project-tech">
+                            <li>Next.js 14</li><li>TypeScript</li><li>FastAPI</li><li>Claude API</li><li>tree-sitter</li><li>sqlite-vec</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>SafeStep</h3>
+                            <span class="project-badge badge-research">CAHSI · Walkaware</span>
+                        </div>
+                        <p class="project-tagline">Android accessibility app for visually impaired pedestrians</p>
+                        <p>3-stage ML pipeline: on-device TFLite detection + severity regression, then fine-tuned GPT narrative spoken via TextToSpeech. Evaluated against 6 NLG metrics.</p>
+                        <ul class="project-tech">
+                            <li>Kotlin</li><li>TFLite</li><li>OpenAI Fine-tuning</li><li>Android TTS</li>
+                        </ul>
+                        <a class="project-link" href="https://github.com/jfrias-CS/SafeStep2" target="_blank" rel="noopener">View on GitHub →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>MotoCrashApp</h3>
+                            <span class="project-badge badge-award">MESA-U 2024 Best Research</span>
+                        </div>
+                        <p class="project-tagline">Emergency-response prototype for motorcycle riders</p>
+                        <p>Tkinter desktop app that monitors for a configurable post-incident countdown; if the rider can't dismiss it, auto-sends a WhatsApp message to their emergency contact with name, allergies, and live GPS location via the Google Geolocation API.</p>
+                        <ul class="project-tech">
+                            <li>Python</li><li>Tkinter</li><li>PyWhatKit</li><li>Google Geolocation API</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>ScanFileGenerator</h3>
+                            <span class="project-badge badge-research">LBNL · ASPIRES</span>
+                        </div>
+                        <p class="project-tagline">Python automation for X-ray spectroscopy at LBNL ALS</p>
+                        <p>Pulls sample configurations from SciCat and generates LabView-format scan files for XAS / XLD / XMCD across 4 beamlines with element-specific edge energies. ~1,000 LOC.</p>
+                        <ul class="project-tech">
+                            <li>Python</li><li>pyscicat</li><li>LabView</li>
+                        </ul>
+                        <a class="project-link" href="https://github.com/jfrias-CS/ScanFileGenerator" target="_blank" rel="noopener">View on GitHub →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>Parkly</h3>
+                            <span class="project-badge">Team capstone · 3 contributors</span>
+                        </div>
+                        <p class="project-tagline">Multi-threaded Java parking garage management system</p>
+                        <p>Client-server architecture with multi-threaded socket server, Singleton + Facade design patterns, service-oriented architecture (auth / payment / ticket / space-tracking), dual Swing GUIs for customer + employee workflows. Includes SRS, use case, sequence, and UML class diagrams.</p>
+                        <ul class="project-tech">
+                            <li>Java</li><li>Swing</li><li>TCP sockets</li><li>Design patterns</li>
+                        </ul>
+                        <a class="project-link" href="https://github.com/jfrias-CS/Parkly" target="_blank" rel="noopener">View on GitHub →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>Self-Hosted Home Security</h3>
+                            <span class="project-badge">Home-lab</span>
+                        </div>
+                        <p class="project-tagline">Frigate + Tailscale on a Linux home server</p>
+                        <p>Self-hosted security camera + NVR system: Frigate (real-time object detection) in Docker, network camera, remote access via Tailscale mesh VPN. Demonstrates Linux sysadmin, containerization, networking, integration of open-source tooling.</p>
+                        <ul class="project-tech">
+                            <li>Linux</li><li>Docker</li><li>Frigate</li><li>Tailscale</li><li>MQTT</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+                <p class="projects-footer">
+                    More on <a href="https://github.com/jfrias-CS" target="_blank" rel="noopener">github.com/jfrias-CS ↗</a> — including <a href="https://github.com/jfrias-CS/dvd-collection-manager" target="_blank" rel="noopener">dvd-collection-manager</a> (Java OOP with shared model across Swing GUI + console UI), an <a href="https://github.com/jfrias-CS/SWE-A3" target="_blank" rel="noopener">e-commerce domain model with JUnit tests</a>, and an Actix-web Rust to-do API.
+                </p>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title"><span class="section-num">04</span> Education</h2>
+                <article class="edu-card">
+                    <div class="edu-school">
+                        <h3>California State University, East Bay</h3>
+                        <p>B.S. Computer Science · Graduated May 2026</p>
+                    </div>
+                    <div class="edu-detail">
+                        <p><strong>Cumulative GPA:</strong> 3.4 · <strong>CSU East Bay GPA:</strong> 3.98 / 4.0</p>
+                        <p class="edu-story">Transferred in at a 3.229 cumulative GPA and raised it to 3.4 across 4 semesters by performing at a 3.98 in CSU East Bay coursework — a story of growth under pressure rather than a flat number.</p>
+                        <p><strong>Relevant coursework:</strong> Software Engineering, Artificial Intelligence, Web Development, Data Structures, Algorithms, Statistics, Linear Algebra, Computer Architecture, Programming Concepts, Software Responsibility, Computer Networks.</p>
+                        <p><strong>Affiliations:</strong> CAHSI (Computing Alliance of Hispanic-Serving Institutions) REU participant — research in computer vision under Prof. Lynne Grewe.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <div class="container contact-inner">
+                <h2 class="section-title"><span class="section-num">05</span> Get in touch</h2>
+                <p class="contact-lead">
+                    Currently seeking <strong>full-time SWE / Applied AI roles</strong>. The fastest way to reach me is email or LinkedIn — both responses within a day.
+                </p>
+                <div class="contact-row">
+                    <a class="contact-card" href="mailto:jonathanfrias.1797@gmail.com">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">jonathanfrias.1797@gmail.com</span>
+                    </a>
+                    <a class="contact-card" href="https://www.linkedin.com/in/jonathan-frias-59452a162/" target="_blank" rel="noopener">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">jonathan-frias-59452a162</span>
+                    </a>
+                    <a class="contact-card" href="https://github.com/jfrias-CS" target="_blank" rel="noopener">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">@jfrias-CS</span>
+                    </a>
+                    <a class="contact-card" href="Jonathan_Frias_Resume.pdf" target="_blank" rel="noopener">
+                        <span class="contact-label">Résumé</span>
+                        <span class="contact-value">PDF · download</span>
+                    </a>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div class="section" id="contact">
-                <div class="section-content">
-                    <h2>📧 Contact Me</h2>
-                    <p>
-                        I am currently seeking Internships or Entry-Level Roles.
-                        Feel free to reach out!
-                    </p>
-
-                    <form id="contact-form">
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Your Name"
-                            required
-                        />
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Your Email"
-                            required
-                        />
-                        <textarea
-                            name="message"
-                            placeholder="Your Message"
-                            rows="5"
-                            required
-                        ></textarea>
-                        <button type="submit" class="btn btn-secondary">
-                            Send Message
-                        </button>
-                    </form>
-
-                    <div class="social-links">
-                        <a href="https://github.com/jfrias-CS" target="\_blank"
-                            >GitHub</a
-                        >
-                        <a
-                            href="https://www.linkedin.com/in/jonathan-frias-59452a162/"
-                            target="\_blank"
-                            >LinkedIn</a
-                        >
-                        <a href="mailto:jfrias9@horizon.csueastbay.edu"
-                            >Email</a
-                        >
-                    </div>
-                </div>
-            </div>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© 2026 Jonathan Frias · Built with vanilla HTML, CSS, and JS · <a href="https://github.com/jfrias-CS/jfrias-CS.github.io" target="_blank" rel="noopener">source</a></p>
         </div>
+    </footer>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
